@@ -1,0 +1,24 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block content %}
+    <div class="features">
+        <img class="mainlogo" src="{% static 'main/img/logo.png'%}" alt="">
+        <h1 class = "title">ITNEWS</h1>
+        <p class = "title">Новостной портал к вашим услугам! Здесь есть все, чего только ваша цифровая душа пожелает. В этом месте вы найдете самые актуальные, свежие и интересные новости в сфере информационных технологий. Наслаждайтесь! По поводу багов и ошибок: </p>
+        <div class="contacts">
+            <a href="https://vk.com/6devilangel6">
+                <img src="{% static 'main/img/vk.png'%}" alt="">
+            </a>
+            <a href="https://www.instagram.com/smeanssavage/">
+                <img src="{% static 'main/img/inst.png'%}" alt="">
+            </a>
+            <a href="https://t.me/Sapkowski3">
+                <img src="{% static 'main/img/telega.png'%}" alt="">
+            </a>
+        </div>
+    </div>
+
+
+{%endblock%}
+
+{% block tittle %}Главная страница{% endblock %}
