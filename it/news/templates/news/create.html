@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+    <div class="content">
+        <h1>Форма по добавлению статьи</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.title }}<br>
+            {{ form.anons }}<br>
+            {{ form.full_text}}<br>
+            {{ form.date }}<br>
+            <span>{{ error }}</span> <br> <br>
+            <button class="btn btn-info test" type="submit" style="color: white"> <span class="fas fa-plus-circle"></span> Добавить статью
+              </button>
+        </form>
+    </div>
+
+{%endblock%}
+
+{% block tittle %}Форма по добавлению статьи{%endblock%}

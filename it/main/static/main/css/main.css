@@ -75,15 +75,16 @@ main .features .contacts img{
 main .features .contacts {display:flex; justify-content:center;}
 
 main .features .title {animation:fadeInUp;  animation-duration: 1.7s;}
-main .features h1 {font-size: 65px; padding-right:10px;}
-main .features p {font-size: 25px; max-width: 910px; margin: 20px auto;}
+main .features h1 {font-size: 65px; padding-right:10px;animation:fadeInUp;  animation-duration: 1.7s;}
+main .features p {font-size: 25px; max-width: 910px; margin: 20px auto;animation:fadeInUp;  animation-duration: 1.7s;}
 
 .news{
     float: left;
     clear: both;
-    width: 400px;
+    width: 450px;
     margin: 20px 34%;
-    text-align: left;
+    animation:fadeInUp;
+    animation-duration: 1.7s;
 }
 
 .content {
@@ -93,10 +94,28 @@ main .features p {font-size: 25px; max-width: 910px; margin: 20px auto;}
     text-align: center;
     width: 72%;
     margin-left:350px;
-    animation:bounce;
-    animation-duration: 2s;
+
 }
 
 .content h1 {font-size:50px;}
 .content h3 {text-align:center;}
-.content p {text-align:justify;}
+.content p {text-align:justify; }
+
+form {
+    margin-left:30%;
+    width:500px;
+    margin-top:50px;
+}
+
+.detailtext{
+    float: left;
+    color: white;
+    margin-top: 50px;
+    text-align: justify;
+    width: 85%;
+    padding-left:500px;
+}
+
+.detailtext h1 {font-size:60px; text-align:center; margin-bottom:40px}
+.detailtext p {font-size:20px; }
+.btnRed {text-align:center}

@@ -1,0 +1,14 @@
+{% extends 'main/layout.html' %}
+
+{% block tittle %}{{ article.title }}{%endblock%}
+
+{% block content %}
+    <div class="detailtext">
+        <h1>{{ article.title }}</h1>
+        <p>{{ article.full_text|linebreaks }}</p>
+        <div class="btnRed"> <p>{{ article.date }}</p>
+        <a href="{%  url 'news_delete' article.slug  %} " class="btn btn-danger">Удалить</a>
+        <a href="{%  url 'news_update' article.slug  %}" class="btn btn-info">Редактировать</a> </div>
+    </div>
+{%endblock%}
+

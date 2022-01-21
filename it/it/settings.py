@@ -39,6 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
+    'pytils',
+    'autoslug',
+    'markitup',
+    'tinymce'
 ]
 
 MIDDLEWARE = [
@@ -70,8 +75,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'it.wsgi.application'
-
-
+MARKITUP_SET = 'markitup/sets/markdown'
+MARKITUP_FILTER = ('markdown.markdown', {'safe_mode': True})
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 

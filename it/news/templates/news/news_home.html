@@ -5,8 +5,9 @@
         <h1>Новости на сайте</h1>
         {% for el in news %}
             <div class="alert alert-warning news">
-                <h3>{{ el.title }}</h3>
+                <h3 class="text-left">{{ el.title }}</h3>
                 <p>{{ el.anons }}</p>
+                <a href="{% url 'news_detail' el.slug %}" class="btn btn-warning text-center">Читать детальнее</a>
             </div>
         {% endfor %}
     </div>
