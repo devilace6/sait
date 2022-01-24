@@ -43,7 +43,11 @@ INSTALLED_APPS = [
     'pytils',
     'autoslug',
     'markitup',
-    'tinymce'
+    'tinymce',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'registration',
 ]
 
 MIDDLEWARE = [
@@ -87,6 +91,10 @@ DATABASES = {
     }
 }
 
+AUTHENTIFICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'registration.account.auth_backends.AuthentificationBackend',
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -132,3 +140,5 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SITE_ID = 1

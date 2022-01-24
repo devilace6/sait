@@ -1,7 +1,6 @@
 from .models import Articles
 from django.forms import ModelForm, TextInput, DateInput, Textarea, CharField
 import datetime
-from tinymce.widgets import TinyMCE
 
 class ArticlesForm(ModelForm):
     class Meta:
@@ -21,7 +20,7 @@ class ArticlesForm(ModelForm):
             }),
             "full_text": Textarea(attrs={
             'class': 'form-control',
-            'placeholder': 'Текст статьи', 'widget': TinyMCE(attrs={'cols': 80, 'rows': 30})
+            'placeholder': 'Текст статьи',
             }),
             "date": DateInput(attrs={
                 'class': 'form-control',

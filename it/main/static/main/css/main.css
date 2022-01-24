@@ -76,7 +76,7 @@ main .features .contacts {display:flex; justify-content:center;}
 
 main .features .title {animation:fadeInUp;  animation-duration: 1.7s;}
 main .features h1 {font-size: 65px; padding-right:10px;animation:fadeInUp;  animation-duration: 1.7s;}
-main .features p {font-size: 25px; max-width: 910px; margin: 20px auto;animation:fadeInUp;  animation-duration: 1.7s;}
+main .features p {font-size: 25px; max-width: 910px; margin: 20px auto;animation:fadeInUp;  animation-duration: 1.9s;}
 
 .news{
     float: left;
@@ -97,7 +97,7 @@ main .features p {font-size: 25px; max-width: 910px; margin: 20px auto;animation
 
 }
 
-.content h1 {font-size:50px;}
+.content h1 {font-size:60px;}
 .content h3 {text-align:center;}
 .content p {text-align:justify; }
 
@@ -119,3 +119,17 @@ form {
 .detailtext h1 {font-size:60px; text-align:center; margin-bottom:40px}
 .detailtext p {font-size:20px; }
 .btnRed {text-align:center}
+
+
+.register {
+    float: left;
+    color: white;
+    margin-top: 50px;
+    text-align: center;
+    width: 68%;
+    margin-left:350px;
+}
+
+.register h1 {font-size:65px; margin-bottom: 20px}
+.register h3 {text-align:center; margin-bottom:-30px;}
+.register p {text-align:center; }
