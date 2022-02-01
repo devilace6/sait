@@ -94,6 +94,7 @@ DATABASES = {
 AUTHENTIFICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'registration.account.auth_backends.AuthentificationBackend',
+    'account.authentication.EmailAuthBackend',
 )
 
 # Password validation
