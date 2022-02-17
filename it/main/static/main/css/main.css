@@ -71,7 +71,20 @@ main .features .contacts img{
     animation-duration: 1.8s;
 }
 
+
+.category {
+  display:flex;
+  justify-content: space-around;
+  animation:fadeInUp;
+  animation-duration: 1.8s;
+}
+
+main .features .category img{
+    width:400px;
+}
+
 main .features .contacts {display:flex; justify-content:center;}
+
 
 main .features .title {animation:fadeInUp;  animation-duration: 1.7s;}
 main .features h1 {font-size: 65px; padding-right:10px;animation:fadeInUp;  animation-duration: 1.7s;}

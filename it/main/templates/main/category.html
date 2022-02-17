@@ -1,10 +1,43 @@
 {% extends 'main/layout.html' %}
+{% load static %}
 
 {% block content %}
     <div class="features mt-5">
         <h1>Категории</h1>
-        <p>Текст текст текст Текст текст текст Текст текст текст Текст текст текст Текст текст текст Текст текст текст Текст текст текст Текст текст текст Текст текст текст Текст текст текст Текст текст текст</p>
+        <div class="category mt-5">
+          <div class="first">
+            <h3>Программирование</h3>
+              <a href="/news/programmirovanie/">
+                  <img src="{% static 'main/img/prog.jpg'%}" alt="">
+              </a>
+          </div>
+          <div class="second">
+            <h3>Современные технологии</h3>
+              <a href="/news/sovremennye-tehnologii/">
+                  <img src="{% static 'main/img/tech.jpg'%}" alt="">
+              </a>
+
+          </div>
+        </div>
     </div>
+    <div class="features mt-5">
+        <div class="category mt-5">
+          <div class="first">
+            <h3>Кибербезопасность</h3>
+              <a href="/news/kiberbezopasnost/">
+                  <img src="{% static 'main/img/cyber.jpg'%}" alt="">
+              </a>
+          </div>
+          <div class="second">
+            <h3>Игры и игровые консоли</h3>
+              <a href="/news/igry-i-igrovye-konsoli/">
+                  <img height="300"  src="{% static 'main/img/games.jpg'%}" alt="">
+              </a>
+          </div>
+        </div>
+    </div>
+
+
 {%endblock%}
 
 {% block tittle %}Категории{%endblock%}

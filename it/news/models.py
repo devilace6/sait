@@ -1,10 +1,21 @@
 from django.db import models
 from autoslug import AutoSlugField
-
+from django.urls import reverse
 
 class Category(models.Model):
-    name = models.CharField(max_length=64)
+    name = models.CharField("Категория", unique=True, max_length=50, db_index=True)
+    slug = models.SlugField(max_length=50, unique=True)
+    class Meta:
+        ordering = ('name',)
 
+    verbose_name = 'Категория'
+    verbose_name_plural = 'Категории'
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('news:news_home_by_category', args=[self.slug])
 
 class Articles(models.Model):
     title = models.CharField('Название', max_length=100)
@@ -17,7 +28,8 @@ class Articles(models.Model):
         (3, 'Кибербезопасность'),
         (4, 'Игры и игровые консоли')
     ]
-    category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.CASCADE, verbose_name='категория', choices=categorys)
+    # category = models.PositiveSmallIntegerField(("Категория"), choices=categorys, blank=False, default=1)
+    category = models.ForeignKey(Category, verbose_name="Категория", related_name="products", on_delete=models.CASCADE)
     slug = AutoSlugField(populate_from='title')
 
 

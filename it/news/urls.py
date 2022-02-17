@@ -8,4 +8,5 @@ urlpatterns = [
     path('<slug:slug>', views.NewsDetail.as_view(), name='news_detail'),
     path('<slug:slug>/update', views.NewsUpdateView.as_view(), name='news_update'),
     path('<slug:slug>/delete', views.NewsDeleteView.as_view(), name='news_delete'),
+    path('<slug:category_slug>/', views.news_home, name = 'catalog_home_by_category')
 ]
