@@ -2,7 +2,6 @@ from .models import Articles
 from django.forms import ModelForm, TextInput, DateInput, Textarea, CharField, ModelChoiceField, ChoiceField, Select
 import datetime
 
-
 class ArticlesForm(ModelForm):
     class Meta:
         model = Articles
@@ -30,6 +29,6 @@ class ArticlesForm(ModelForm):
             }),
             "category": Select(attrs={
                 'class': 'form-control',
-                'placeholder' : 'Категории',
+                'placeholder': 'Категории',
             }),
         }

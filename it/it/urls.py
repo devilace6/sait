@@ -8,4 +8,5 @@ urlpatterns = [
     path('', include('main.urls')),
     path('news/', include('news.urls')),
     path('login/', include('registration.urls')),
+    path('profile/', include('cabinet.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

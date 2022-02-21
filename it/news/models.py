@@ -7,9 +7,8 @@ class Category(models.Model):
     slug = models.SlugField(max_length=50, unique=True)
     class Meta:
         ordering = ('name',)
-
-    verbose_name = 'Категория'
-    verbose_name_plural = 'Категории'
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'
 
     def __str__(self):
         return self.name
@@ -22,14 +21,8 @@ class Articles(models.Model):
     anons = models.TextField('Анонс')
     full_text = models.TextField('Статья')
     date = models.DateField('Дата публикации')
-    categorys = [
-        (1, 'Программирование'),
-        (2, 'Современные технологии'),
-        (3, 'Кибербезопасность'),
-        (4, 'Игры и игровые консоли')
-    ]
     # category = models.PositiveSmallIntegerField(("Категория"), choices=categorys, blank=False, default=1)
-    category = models.ForeignKey(Category, verbose_name="Категория", related_name="products", on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, verbose_name="Категория", related_name="products", on_delete=models.CASCADE,default=1)
     slug = AutoSlugField(populate_from='title')
 
 
