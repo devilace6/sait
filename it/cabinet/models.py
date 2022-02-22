@@ -9,5 +9,5 @@ class Profile(models.Model):
     vk = models.CharField(max_length=50, null=True, blank=True)
     instagram = models.CharField(max_length=50, null=True, blank=True)
 
-def __str__(self):
-    return str(self.user)
+    def __str__(self):
+        return str(self.user)
