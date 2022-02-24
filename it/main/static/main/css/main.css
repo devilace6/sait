@@ -145,3 +145,7 @@ form {
 .register h1 {font-size:65px; margin-bottom: 20px}
 .register h3 {text-align:center; margin-bottom:-30px;}
 .register p {text-align:center; }
+
+.profile {
+    color: #fff;
+}

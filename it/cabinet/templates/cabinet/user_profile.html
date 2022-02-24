@@ -2,31 +2,32 @@
 {% load static %}
 
 {% block content %}
+    <div class="features">
+        <a href="{% url 'home' %}" className="btn btn-outline-primary btn-sm mb-2">На главную</a>
 
-    <div class="header-bar">
-        <h1>Профиль</h1>
-        <a href="{% url 'home' %}">&#8592; Back</a>
+        <div className="card mb-4">
+            <div className="card-body">
+                <div className="row">
+                    <div className="col-sm-3 text-center">
+                        <img
+                            src="{% static 'cabinet\img\user.png' %}"
+                            style="width: 100px"
+                        />
+                        <h1>{{ page_user.email }}</h1>
+                    </div>
+                    <div>
+                        <div className="badge badge-primary">Подписчики: {followers}</div>
+                        <div className="badge badge-success">Подписан: {following}</div>
+                        <div className="badge badge-info">Репозитории: {public_repos}</div>
+                        <div className="badge badge-dark">Gists: {public_gists}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="card-body">
-    {% if user.profile.profile_pic %}
-      <img src="{{ profile.profile_pic.url }}" height=100 width=100><br><br>
-    {% else %}
-      <img src="{% static 'cabinet\img\user.png' %}" height=100 width=100><br><br>
-    {% endif %}
-      <p><strong>Username:</strong> {{ page_user }}</p><br><br>
-      <p><strong>Bio:</strong> {{ profile.bio }}</p><br><br>
-      {% if profile.vk %}
-      <p><strong>VK:</strong> {{ profile.vk }}</p><br><br>
-      {% endif %}
-      {% if profile.instagram %}
-      <p><strong>Instagram:</strong> {{ profile.instagram }}</p><br><br>
-      {% endif %}
-      {% if user.id == profile.user.id %}
-      <a href="{% url 'edit_user_profile' profile.id %}"><button class="button">Редактировать</button></a>
-      {% endif %}
-    </div>
 
 {% endblock %}
 
 {% block tittle %}Профиль{%endblock%}
+

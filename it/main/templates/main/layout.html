@@ -39,6 +39,7 @@
             <li><a href="{% url 'category' %}"><i class="far fa-list-alt"></i>Категории</a></li>
             <li><a href="{% url 'news_home' %}"><i class="far fa-newspaper"></i>Новости</a></li>
             {% if request.user.is_authenticated %}
+                <li><a href="{% url 'user_profile' 1 %}">Профиль</a></li>
                 <li> <a href="{% url 'logout' %}" title="Выход из аккаунта"><i class="fas fa-sign-out-alt"></i>Выход</a></li>
             {% else %}
                 <li><a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i>Авторизация</a></li>
