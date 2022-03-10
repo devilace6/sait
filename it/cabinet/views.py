@@ -3,16 +3,24 @@ from django.urls import reverse_lazy
 from django.views.generic import DetailView, CreateView
 from .models import Profile
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.decorators import login_required
+from .forms import UpdateUserForm, UpdateProfileForm
 
 
-class ShowProfilePageView(DetailView):
-    model = Profile
-    template_name = 'cabinet/user_profile.html'
+@login_required
+def profile(request):
+    if request.method == 'POST':
+        user_form = UpdateUserForm(request.POST, instance=request.user)
+        profile_form = UpdateProfileForm(request.POST, request.FILES, instance=request.user.profile)
 
-    def get_context_data(self, *args, **kwargs):
-        users = Profile.objects.all()
-        context = super(ShowProfilePageView, self).get_context_data(*args, **kwargs)
-        page_user = get_object_or_404(Profile, id=self.kwargs['pk'])
-        context['page_user'] = page_user
-        return context
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            messages.success(request, 'Your profile is updated successfully')
+            return redirect(to='users-profile')
+    else:
+        user_form = UpdateUserForm(instance=request.user)
+        profile_form = UpdateProfileForm(instance=request.user.profile)
+
+    return render(request, 'cabinet/user_profile.html', {'user_form': user_form, 'profile_form': profile_form})
 

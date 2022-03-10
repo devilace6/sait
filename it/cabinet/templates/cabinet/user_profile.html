@@ -2,30 +2,87 @@
 {% load static %}
 
 {% block content %}
-    <div class="features">
-        <a href="{% url 'home' %}" className="btn btn-outline-primary btn-sm mb-2">На главную</a>
-
-        <div className="card mb-4">
-            <div className="card-body">
-                <div className="row">
-                    <div className="col-sm-3 text-center">
-                        <img
-                            src="{% static 'cabinet\img\user.png' %}"
-                            style="width: 100px"
-                        />
-                        <h1>{{ page_user.email }}</h1>
-                    </div>
-                    <div>
-                        <div className="badge badge-primary">Подписчики: {followers}</div>
-                        <div className="badge badge-success">Подписан: {following}</div>
-                        <div className="badge badge-info">Репозитории: {public_repos}</div>
-                        <div className="badge badge-dark">Gists: {public_gists}</div>
+    <div class="container-fluid mt-3 profile">
+        <div class="row">
+            <div class="col-12">
+                <div class="card card-inverse">
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-md-8 col-sm-8">
+                                <h2 class="card-title">Имя пользователя: {{ user.username }}</h2>
+                                <p class="card-text"><strong>Email: </strong> {{ user.email }} </p>
+                            </div>
+                            <div class="col-md-4 col-sm-4 text-center">
+                                <img class="profile-img"
+                                     src="{% static 'cabinet/img/user.png'%}"
+                                     alt="" style="border-radius:50%;">
+                            </div>
+                            <div class="col-md-4 col-sm-4 mt-3 text-center">
+                                <h2><strong> VK </strong></h2>
+                                <button class="btn btn-primary btn-block btn-md"><span
+                                        class="fa fa-facebook-square"></span> Like
+                                </button>
+                            </div>
+                            <div class="col-md-4 col-sm-4 mt-3 text-center">
+                                <h2><strong>Instagram</strong></h2>
+                                <button class="btn btn-success btn-block btn-md"><span
+                                        class="fa fa-twitter-square"></span> Tweet
+                                </button>
+                            </div>
+                            <div class="col-md-4 col-sm-4 mt-3 text-center">
+                                <h2><strong>3.8K</strong></h2>
+                                <button type="button" class="btn btn-danger btn-block btn-md"><span
+                                        class="fa fa-google-plus-square"></span> Follow
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+<div class="row my-3 p-3">
+        <img class="rounded-circle account-img" src="{{ user.profile.avatar.url }} " style="cursor: pointer;"/>
+    </div>
+    {% if user_form.errors %}
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <div id="form_errors">
+                {% for key, value in user_form.errors.items %}
+                    <strong>{{ value }}</strong>
+                {% endfor %}
+            </div>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endif %}
+    <div class="change-info">
+        <h2 class="text-white text-center">Изменить данные</h2>
+        <div class="form-content">
+            <form method="post" enctype="multipart/form-data" class="change-info__form">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label class="small mb-1">Имя пользователя:</label>
+                                {{ user_form.username }}
+                            <label class="small mb-1">Email:</label>
+                                {{ user_form.email }}
+                        </div>
+                        <div class="form-group">
+                            <hr>
+                            <label class="small mb-1">Изменить аватар:</label>
+                            {{ profile_form.avatar }}
+                        </div>
+                        <label class="small mb-1">Биография:</label> {{ profile_form.bio }}
+                    </div>
+                </div>
+                <br><br>
+                <button type="submit" class="btn btn-dark btn-lg">Сохранить изменения</button>
+                <button type="reset" class="btn btn-dark btn-lg">Очистить</button>
+            </form>
+        </div>
+    </div>
 
 {% endblock %}
 

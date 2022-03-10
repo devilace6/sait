@@ -1,6 +1,10 @@
 from django.apps import AppConfig
 
 
-class CabinetConfig(AppConfig):
+class UserConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'cabinet'
+
+    # add this
+    def ready(self):
+        import cabinet.signals

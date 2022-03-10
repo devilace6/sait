@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'registration',
     'cabinet',
+    'bootstrap4'
 ]
 
 MIDDLEWARE = [
