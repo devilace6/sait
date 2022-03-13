@@ -1,26 +1,26 @@
 @import 'animate.css';
 
-body{
- background:#282828;
+body {
+     background:#282828;
+     display: flex;
+     overflow-x:hidden;
 }
 
 aside {
-    float:left;
     background:#181818;
     width: 20%;
     padding: 2.5%;
     height: 100vmax;
-    color:white;
-    border-right:5px solid #4d4d4d;
-    position: fixed;
+    color: white;
+    border-right: 5px solid #4d4d4d;
 }
 
 
-aside img{
+aside img {
     width: 100px;
 }
 
-aside .logo{
+aside .logo {
     font-size: 36px;
     margin-left: 10px;
     font-weight: bold;
@@ -35,17 +35,18 @@ aside h3 {
 }
 
 aside ul {list-style: none}
+
 aside ul li a {
     color: white;
     display: block;
     margin-top: 30px;
-    text-decoration:none;
     transition: transform .6s ease;
 }
 aside ul li i {margin-right: 10px}
 
 aside ul li a:hover {
     color: #660099;
+    text-decoration: none;
     transform: scale(1.05);
 }
 
@@ -57,7 +58,7 @@ main .features {
     padding-left:500px;
 }
 
-main .features .mainlogo{
+main .features .mainlogo {
     width: 100px;
     position:absolute;
     margin-left: -26vh;
@@ -79,18 +80,35 @@ main .features .contacts img{
   animation-duration: 1.8s;
 }
 
-main .features .category img{
+main .features .category img {
     width:400px;
 }
 
-main .features .contacts {display:flex; justify-content:center;}
+main .features .contacts {
+    display:flex;
+    justify-content:center;
+}
 
 
-main .features .title {animation:fadeInUp;  animation-duration: 1.7s;}
-main .features h1 {font-size: 65px; padding-right:10px;animation:fadeInUp;  animation-duration: 1.7s;}
-main .features p {font-size: 25px; max-width: 910px; margin: 20px auto;animation:fadeInUp;  animation-duration: 1.9s;}
+main .features .title {
+    animation:fadeInUp;
+    animation-duration: 1.7s;
+}
+main .features h1 {
+    font-size: 65px;
+    padding-right:10px;
+    animation:fadeInUp;
+    animation-duration: 1.7s;
+}
+main .features p {
+    font-size: 25px;
+    max-width: 910px;
+    margin: 20px auto;
+    animation:fadeInUp;
+    animation-duration: 1.9s;
+}
 
-.news{
+.news {
     float: left;
     clear: both;
     width: 450px;
@@ -119,7 +137,7 @@ form {
     margin-top:50px;
 }
 
-.detailtext{
+.detailtext {
     float: left;
     color: white;
     margin-top: 50px;
@@ -128,10 +146,14 @@ form {
     padding-left:500px;
 }
 
-.detailtext h1 {font-size:60px; text-align:center; margin-bottom:40px}
+.detailtext h1 {
+    font-size:60px;
+    text-align:center;
+    margin-bottom:40px
+}
+
 .detailtext p {font-size:20px; }
 .btnRed {text-align:center}
-
 
 .register {
     float: left;
@@ -147,5 +169,30 @@ form {
 .register p {text-align:center; }
 
 .profile {
+    margin-left: 13%
+}
+
+.card-inverse {
+    background: #FFE4E1
+}
+
+.profile-img {
+    width: 100px;
+    border-width: 0;
+    outline: none;
+    border-radius: 0;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .6);
+    cursor: pointer;
+}
+
+.change-info {
+    margin-left: 13%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.change-info__form {
     color: #fff;
+    width: 100%;
 }

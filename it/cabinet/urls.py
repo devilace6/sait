@@ -3,5 +3,5 @@ from django.contrib import admin
 from .views import *
 
 urlpatterns = [
-    path('user_profile/<int:pk>/', ShowProfilePageView.as_view(), name='user_profile'),
+    path('user_profile/', profile, name='users-profile'),
 ]
