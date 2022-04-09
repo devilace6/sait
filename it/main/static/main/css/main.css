@@ -3,7 +3,7 @@
 body {
      background:#282828;
      display: flex;
-     overflow-x:hidden;
+
 }
 
 aside {
@@ -13,8 +13,14 @@ aside {
     height: 100vmax;
     color: white;
     border-right: 5px solid #4d4d4d;
+    display: flex;
+    flex-direction: column;
 }
 
+
+main {
+    width:50%;
+}
 
 aside img {
     width: 100px;
@@ -22,27 +28,31 @@ aside img {
 
 aside .logo {
     font-size: 36px;
-    margin-left: 10px;
     font-weight: bold;
-    position: relative;
-    bottom: -9px;
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+
 }
 
 aside h3 {
-    margin-top: 45px;
+    display:flex;
     font-size: 30px;
-    margin-left:10px;
+    margin-top: 50px;
 }
 
 aside ul {list-style: none}
 
 aside ul li a {
     color: white;
-    display: block;
+    display: flex;
     margin-top: 30px;
     transition: transform .6s ease;
+    align-items: center;
 }
-aside ul li i {margin-right: 10px}
+aside ul li i {
+    margin-right: 10px
+}
 
 aside ul li a:hover {
     color: #660099;
@@ -51,21 +61,26 @@ aside ul li a:hover {
 }
 
 main .features {
-    float: left;
+    display:flex;
     color: white;
-    text-align: center;
-    width: 85%;
-    padding-left:500px;
+    align-items: center;
+    width: 150%;
+    flex-direction:column;
 }
 
 main .features .mainlogo {
-    width: 100px;
-    position:absolute;
-    margin-left: -26vh;
-    margin-top: -1.4vh;
     animation:fadeInUp;
     animation-duration: 1.7s;
+    display:flex;
+    align-items:center;
 }
+
+main .features .mainlogo img {
+    width: 100px;
+    margin-right: 10px;
+}
+
+
 main .features .contacts img{
     width:100px;
     animation:fadeInUp;
@@ -73,15 +88,46 @@ main .features .contacts img{
 }
 
 
-.category {
+.contain {
   display:flex;
-  justify-content: space-around;
+  justify-content: center;
   animation:fadeInUp;
   animation-duration: 1.8s;
+  width:100%;
+  flex-direction:column;
 }
 
-main .features .category img {
-    width:400px;
+.category {
+    display:flex;
+    color: white;
+    align-items: center;
+    width: 150%;
+    justify-content: space-around;
+}
+
+.category-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.category-header {
+    font-size:60px;
+    animation:fadeInUp;
+    animation-duration: 1.7s;
+    color: white;
+    display:flex;
+    align-items: center;
+    width: 150%;
+    flex-direction:column;
+}
+
+
+
+main .contain img {
+    max-width:400px;
+    height: 300px;
 }
 
 main .features .contacts {
@@ -106,6 +152,8 @@ main .features p {
     margin: 20px auto;
     animation:fadeInUp;
     animation-duration: 1.9s;
+    text-align:center;
+
 }
 
 .news {
@@ -118,18 +166,21 @@ main .features p {
 }
 
 .content {
-    float: left;
+    display:flex;
+    flex-direction:column;
     color: white;
-    margin-top: 50px;
-    text-align: center;
-    width: 72%;
-    margin-left:350px;
+    align-items: center;
+    width: 150vh;
 }
 
 
-.content h1 {font-size:60px;}
-.content h3 {text-align:center;}
-.content p {text-align:justify; }
+.content h1 {
+    font-size:60px;
+    animation:fadeInUp;
+    animation-duration: 1.7s;
+}
+.content h3 {text-align:left;   }
+.content p {text-align:justify;}
 
 form {
     margin-left:30%;
@@ -169,11 +220,11 @@ form {
 .register p {text-align:center; }
 
 .profile {
-    margin-left: 13%
+    margin-left: 13%;
 }
 
 .card-inverse {
-    background: #FFE4E1
+    background: #FFFAF0;
 }
 
 .profile-img {

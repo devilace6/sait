@@ -2,9 +2,13 @@
 {% load static %}
 {% block content %}
     <div class="features mt-5">
-        <img class="mainlogo" src="{% static 'main/img/logo.png'%}" alt="">
-        <h1 class = "title">ITNEWS</h1>
-        <p class = "title">Информационный сайт в сфере IT к вашим услугам! Здесь есть все, чего только ваша цифровая душа пожелает. В этом месте вы найдете самые актуальные, свежие и интересные новости в сфере информационных технологий. Наслаждайтесь! По поводу багов и ошибок: </p>
+        <div class="mainlogo">
+        <img src="{% static 'main/img/logo.png'%}" alt="">
+        <h1>ITNEWS</h1>
+        </div>
+        <div class="intro">
+        <p>Информационный сайт в сфере IT к вашим услугам! Здесь есть все, чего только ваша цифровая душа пожелает. В этом месте вы найдете самые актуальные, свежие и интересные новости в сфере информационных технологий. Наслаждайтесь! По поводу багов и ошибок: </p>
+        </div>
         <div class="contacts">
             <a href="https://vk.com/6devilangel6">
                 <img src="{% static 'main/img/vk.png'%}" alt="">

@@ -5,7 +5,8 @@ from .models import Profile
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .forms import UpdateUserForm, UpdateProfileForm
-
+from django.shortcuts import redirect
+from django.contrib import messages
 
 @login_required
 def profile(request):

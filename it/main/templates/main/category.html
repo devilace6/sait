@@ -2,33 +2,30 @@
 {% load static %}
 
 {% block content %}
-    <div class="features mt-5">
-        <h1>Категории</h1>
-        <div class="category mt-5">
-          <div class="first">
+    <div class="contain">
+        <h1 class="category-header mt-5">Категории</h1>
+        <div class="category">
+          <div class="category-content">
             <h3>Программирование</h3>
               <a href="/news/programmirovanie/">
                   <img src="{% static 'main/img/prog.jpg'%}" alt="">
               </a>
           </div>
-          <div class="second">
+          <div class="category-content">
             <h3>Современные технологии</h3>
               <a href="/news/sovremennye-tehnologii/">
                   <img src="{% static 'main/img/tech.jpg'%}" alt="">
               </a>
-
           </div>
         </div>
-    </div>
-    <div class="features mt-5">
-        <div class="category mt-5">
-          <div class="first">
+        <div class="category">
+          <div class="category-content">
             <h3>Кибербезопасность</h3>
               <a href="/news/kiberbezopasnost/">
                   <img src="{% static 'main/img/cyber.jpg'%}" alt="">
               </a>
           </div>
-          <div class="second">
+          <div class="category-content">
             <h3>Игры и игровые консоли</h3>
               <a href="/news/igry-i-igrovye-konsoli/">
                   <img height="300"  src="{% static 'main/img/games.jpg'%}" alt="">
@@ -36,7 +33,6 @@
           </div>
         </div>
     </div>
-
 
 {%endblock%}
 
