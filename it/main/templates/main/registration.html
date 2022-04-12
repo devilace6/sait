@@ -1,7 +1,6 @@
 {% extends 'main/layout.html' %}
 {% block content %}
     <div class="register"> <h1>Регистрация</h1>
-    <h3>Для регистрации введите данные в форму:</h3>
     <form method="post">
         {{ user_form.as_p }}
         {% csrf_token %}
