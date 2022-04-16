@@ -2,8 +2,10 @@
 
 body {
      background:#282828;
-     display: flex;
+}
 
+.all {
+    display: flex;
 }
 
 aside {
@@ -225,11 +227,12 @@ form {
 .register p {text-align:center;}
 
 .profile {
-    margin-left: 13%;
+    width: 100%;
+    margin-left: 30%;
 }
 
 .card-inverse {
-    background: #FFFAF0;
+    background: #C0C0C0	;
 }
 
 .profile-img {
@@ -242,7 +245,9 @@ form {
 }
 
 .change-info {
-    margin-left: 13%;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     flex-direction: column;
