@@ -94,7 +94,7 @@ main .features .contacts img{
   display:flex;
   justify-content: center;
   animation:fadeInUp;
-  animation-duration: 1.8s;
+  animation-duration: 1.7s;
   width:100%;
   flex-direction:column;
 }
@@ -144,7 +144,6 @@ main .features .title {
 }
 main .features h1 {
     font-size: 65px;
-    padding-right:10px;
     animation:fadeInUp;
     animation-duration: 1.7s;
 }
@@ -174,12 +173,18 @@ main .features p {
     width: 150vh;
 }
 
+.bntdelete {
+    display:flex;
+    justify-content:space-evenly;
+}
+
 
 .content h1 {
     font-size:60px;
     animation:fadeInUp;
     animation-duration: 1.7s;
 }
+
 .content h3 {text-align:left;}
 .content p {text-align:justify;}
 
@@ -190,16 +195,16 @@ form {
     margin-top:50px;
     animation:fadeInUp;
     animation-duration: 1.7s;
-
 }
 
 .detailtext {
-    float: left;
     color: white;
     margin-top: 50px;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
     text-align: justify;
-    width: 85%;
-    padding-left:500px;
+    width: 160%;
 }
 
 .detailtext h1 {
@@ -208,8 +213,12 @@ form {
     margin-bottom:40px
 }
 
-.detailtext p {font-size:20px;}
-.btnRed {text-align:center}
+.detailtext p {font-size:20px;width:80%}
+
+.btnRed {
+    text-align:center;
+    justify-content:space-evenly;
+}
 
 .register {
     display:flex;
@@ -227,13 +236,9 @@ form {
 .register p {text-align:center;}
 
 .profile {
-    width: 100%;
-    margin-left: 30%;
+    width: 150vh;
 }
 
-.card-inverse {
-    background: #C0C0C0	;
-}
 
 .profile-img {
     width: 100px;
@@ -246,6 +251,7 @@ form {
 
 .change-info {
     border: 1px solid #fff;
+    width:75%;
     border-radius: 8px;
     margin: 0 auto;
     display: flex;
