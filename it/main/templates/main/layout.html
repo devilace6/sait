@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <script src="https://kit.fontawesome.com/b186d93661.js" crossorigin="anonymous"></script>
     <script src="{% static 'main/js/script.js' %}" defer></script>
 </head>
 <body>
@@ -55,7 +55,23 @@
         {% endblock %}
     </main>
 </div>
+    <footer class="footer">
+    <ul class="social">
+        <li><a href="https://vk.com/6devilangel6"><i class="fa-brands fa-vk"></i></a></li>
+        <li><a href="https://www.instagram.com/smeanssavage/"><i class="fa-brands fa-instagram"></i></a> </li>
+        <li><a href="https://t.me/Sapkowski3"><i class="fa-brands fa-telegram"></i></i></a></li>
+    </ul>
+    <ul class="menu">
+        <li><a href="{% url 'home' %}">О сайте</a></li>
+        <li><a href="{% url 'category'%}">Категории</a></li>
+        <li><a href="{% url 'news_home' %}">Новости</a></li>
+        <li><a href="{% url 'login' %}">Войти</a></li>
+        <li><a href="{% url 'register' %}">Зарегистрироваться</a></li>
+    </ul>
+    <p>©2022 ITNEWS | Все права защищены</p>
 
+
+    </footer>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>

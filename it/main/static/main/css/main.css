@@ -8,6 +8,7 @@ body {
     display: flex;
 }
 
+
 aside {
     background:#181818;
     width: 20%;
@@ -34,7 +35,6 @@ aside .logo {
     display:flex;
     align-items: center;
     justify-content: space-evenly;
-
 }
 
 aside h3 {
@@ -262,4 +262,58 @@ form {
 .change-info__form {
     color: #fff;
     width: 100%;
+}
+
+
+.footer {
+    background-color: grey;
+    position: relative;/*относительное позиционирование*/
+    width: 100%;/*на всю ширину*/
+    background: grey;/*цвет футера*/
+    display: flex;
+    justify-content: center;/*в центре по горизонтали*/
+    align-items: center;/*в центре по вертикали*/
+    flex-direction: column;
+}
+
+.social,
+.menu{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;/*разрешен перенос на новую строку*/
+}
+
+.social li,
+.menu li{
+    list-style: none;
+}
+
+.social li a {
+    font-size: 2.5em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.menu li a {
+    font-size: 1.2em;
+    color: #fff;
+    opacity: 0.75;
+    margin: 0 15px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.menu li a:hover {
+    opacity: 1;
+}
+footer p {
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.1em;
 }
