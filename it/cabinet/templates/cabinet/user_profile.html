@@ -14,16 +14,18 @@
                                 <p class="card-text"><strong>Email: </strong> {{ user.email }} </p>
                             </div>
                             <div class="col-md-4 col-sm-4 text-center">
+
+                                {% if user1.avatar %}
+                               <img class="profile-img"
+                                   src="{{ user1.avatar.url }}"
+                                    alt=""
+                                   style="border-radius:50%; width: 200px; height: 200px"/>
+                                {% else %}
                                 <img class="profile-img"
                                      src="{% static 'cabinet/img/user.png'%}"
                                      alt=""
-                                     style="border-radius:50%;"
-                                >
-<!--                                <img class="profile-img"-->
-<!--                                     src="{{ user.profile_pic }}"-->
-<!--                                     alt=""-->
-<!--                                     style="border-radius:50%; width: 200px; height: 200px"-->
-<!--                                >-->
+                                     style="border-radius:50%;"/>
+                                {% endif %}
                             </div>
                         </div>
                     </div>

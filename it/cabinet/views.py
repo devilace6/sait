@@ -10,7 +10,7 @@ from django.contrib import messages
 
 @login_required
 def profile(request):
-    user = Profile.objects.all()
+    user = Profile.objects.get(user=request.user)
     if request.method == 'POST':
         user_form = UpdateUserForm(request.POST, instance=request.user)
         profile_form = UpdateProfileForm(request.POST, request.FILES, instance=request.user.profile)
@@ -18,7 +18,7 @@ def profile(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            messages.success(request, 'Ваш профиль успешно обновлен и ')
+            messages.success(request, 'Ваш профиль успешно обновлен')
             return redirect(to='users-profile')
     else:
         user_form = UpdateUserForm(instance=request.user)

@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from .models import Articles
-from .forms import ArticlesForm
+from .forms import ArticlesForm, CommentForm
 from django.views.generic import DetailView,UpdateView, DeleteView
+from django.views.generic.edit import FormMixin
 import string
 from .models import Category
 from django.shortcuts import get_object_or_404
@@ -17,10 +18,28 @@ def news_home(request, category_slug=None):
                   {'news': news, 'categories': categories})
 
 
-class NewsDetail(DetailView):
+class NewsDetail(FormMixin,DetailView):
     model = Articles
     template_name = 'news/details.html'
     context_object_name = 'article'
+    form_class = CommentForm
+    success_url = '/news'
+
+    def post (self, request, *args, **kwargs):
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
+    def form_valid(self, form):
+        self.object = form.save(commit = False)
+        self.object.article = self.get_object()
+        self.object.author = self.request.user
+        self.object.save()
+        return super().form_valid(form)
+
+
 
 class NewsUpdateView(UpdateView):
     model = Articles
@@ -32,8 +51,6 @@ class NewsDeleteView(DeleteView):
     model = Articles
     success_url = '/news'
     template_name = 'news/news_delete.html'
-
-
 
 def create(request):
     error = ''

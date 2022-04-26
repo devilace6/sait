@@ -1,6 +1,7 @@
 from django.db import models
 from autoslug import AutoSlugField
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 class Category(models.Model):
     name = models.CharField("Категория", unique=True, max_length=50, db_index=True)
@@ -35,4 +36,12 @@ class Articles(models.Model):
     class Meta:
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
+
+
+class Comments (models.Model):
+    article = models.ForeignKey(Articles, on_delete=models.CASCADE, verbose_name='Статья', blank = True, null = True, related_name='comments_articles')
+    author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Автор комментария', blank=True, null=True)
+    create_date = models.DateTimeField(auto_now=True, verbose_name='Дата создания')
+    text = models.TextField(verbose_name='Текст комментария')
+
 

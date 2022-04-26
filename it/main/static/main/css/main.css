@@ -173,6 +173,16 @@ main .features p {
     width: 150vh;
 }
 
+.read_date {
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+}
+
+.read_date p{
+    margin-top: 10px;
+}
+
 .bntdelete {
     display:flex;
     justify-content:space-evenly;
@@ -188,18 +198,32 @@ main .features p {
 .content h3 {text-align:left;}
 .content p {text-align:justify;}
 
-form {
+.content form {
     display:flex;
     flex-direction:column;
     width:500px;
-    margin-top:50px;
+    margin-top:40px;
+    animation:fadeInUp;
+    animation-duration: 1.7s;
+}
+
+.content select {
+
+
+}
+
+.register form{
+    display:flex;
+    flex-direction:column;
+    width:500px;
+    margin-top:40px;
     animation:fadeInUp;
     animation-duration: 1.7s;
 }
 
 .detailtext {
     color: white;
-    margin-top: 50px;
+    margin-top: 10px;
     display:flex;
     flex-direction:column;
     align-items: center;
@@ -213,11 +237,46 @@ form {
     margin-bottom:40px
 }
 
-.detailtext p {font-size:20px;width:80%}
+
+.detailtext p {
+   font-size:20px;
+   width:80%
+}
 
 .btnRed {
     text-align:center;
     justify-content:space-evenly;
+}
+
+.comments {
+    color:white;
+    padding:10px;
+}
+
+.comments hr {
+    color: white;
+    height: 1px;
+    border:none;
+    width: 160%;
+}
+
+.comments form{
+    display:flex;
+    flex-direction:column;
+}
+
+.comments button{
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+.comments ul {
+    list-style: none;
+    padding:0;
+}
+
+.comment-card {
+    display:flex;
+    width: 100%;
 }
 
 .register {
@@ -244,9 +303,15 @@ form {
     width: 100px;
     border-width: 0;
     outline: none;
-    border-radius: 0;
+    border-radius: 0    ;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, .6);
     cursor: pointer;
+}
+
+.profile form {
+    display:flex;
+    flex-direction:column;
+    margin-top:40px;
 }
 
 .change-info {
@@ -317,3 +382,17 @@ footer p {
     margin-top: 15px;
     font-size: 1.1em;
 }
+
+.sub-menu
+{
+   display: none;
+}
+.main-item:focus ~ .sub-menu,
+.main-item:active ~ .sub-menu,
+.sub-menu:hover
+{
+   display: block;
+}
+
+
+
