@@ -6,6 +6,7 @@ from django.views.generic.edit import FormMixin
 import string
 from .models import Category
 from django.shortcuts import get_object_or_404
+from django.views.generic import View
 
 def news_home(request, category_slug=None):
     category = None
@@ -76,4 +77,29 @@ def create(request):
         'error':error
     }
     return render(request,'news/create.html',data)
+
+
+class Search(View):
+    def get (self, request, *args, **kwargs):
+        news = Articles.objects.filter(title__icontains=request.GET.get("search"))
+        return render (request, 'news/news_home.html',
+                        {'news': news,})
+
+
+def FilterCatalogView(request):
+    news = Articles.objects.all()
+    if "sort" in request.GET:
+        if request.GET.getlist("sort") == ['date']:
+            news = news.order_by('date')
+        elif request.GET.getlist("sort") == ['title']:
+            print(request.GET.getlist("sort"))
+            news = news.order_by('title')
+        else:
+            pass
+    return render (request, 'news/news_home.html',
+                   {'news': news})
+
+
+
+
 
