@@ -3,12 +3,9 @@
 body {
      background:#282828;
 }
-
 .all {
     display: flex;
 }
-
-
 aside {
     background:#181818;
     width: 20%;
@@ -19,8 +16,6 @@ aside {
     display: flex;
     flex-direction: column;
 }
-
-
 main {
     width:50%;
 }

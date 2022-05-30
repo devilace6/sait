@@ -44,7 +44,9 @@
             {% if request.user.is_authenticated %}
                 <li><a href="{% url 'users-profile' %}"><i class="fa fa-users" aria-hidden="true"></i>Профиль</a></li>
                 <li> <a href="{% url 'logout' %}" title="Выход из аккаунта"><i class="fas fa-sign-out-alt"></i>Выход</a></li>
+            {% if request.user.is_superuser %}
                 <li><a href="{% url 'create' %}"><button class ="btn btn-info"style="color: white"><i class="fas fa-plus-circle"></i>Добавить запись</button></a></li>
+            {% endif %}
             {% else %}
                 <li><a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i>Авторизация</a></li>
             {% endif %}

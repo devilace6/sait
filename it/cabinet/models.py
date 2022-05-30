@@ -6,8 +6,10 @@ class Profile(models.Model):
     email = models.CharField(max_length=200, null=True)
     bio = models.TextField(null=True, blank=True)
     avatar = models.ImageField(null=True, blank=True, upload_to="cabinet/img/")
-    vk = models.CharField(max_length=50, null=True, blank=True)
-    instagram = models.CharField(max_length=50, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Профиль'
+        verbose_name_plural = 'Профили'
 
     def __str__(self):
-        return self.user
+        return self.user.username

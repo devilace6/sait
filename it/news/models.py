@@ -44,4 +44,6 @@ class Comments (models.Model):
     create_date = models.DateTimeField(auto_now=True, verbose_name='Дата создания')
     text = models.TextField(verbose_name='Текст комментария')
 
-
+    class Meta:
+        verbose_name = 'Комментарий'
+        verbose_name_plural = 'Комментарии'
